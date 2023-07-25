@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="YY_C_EXAM01_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="POEntity" sap:label="PO Line items and Schedule lines" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="HNodeKey"/>
+                </Key>
+                <Property Name="HNodeKey" Type="Edm.Guid" Nullable="false" sap:label="Node Key" sap:quickinfo="EPM: Generic Node Key"/>
+                <Property Name="PoId" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="PO. No" sap:quickinfo="EPM: Purchase Order Number"/>
+                <Property Name="CreatedBy" Type="Edm.Guid" sap:label="Node Key" sap:quickinfo="EPM: Generic Node Key"/>
+                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At" sap:quickinfo="EPM: Created At"/>
+                <Property Name="ChangedBy" Type="Edm.Guid" sap:label="Node Key" sap:quickinfo="EPM: Generic Node Key"/>
+                <Property Name="ChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Changed At" sap:quickinfo="EPM: Changed At"/>
+                <Property Name="NoteGuid" Type="Edm.Guid" sap:label="Node Key" sap:quickinfo="EPM: Generic Node Key"/>
+                <Property Name="PartnerGuid" Type="Edm.Guid" sap:label="Node Key" sap:quickinfo="EPM: Generic Node Key"/>
+                <Property Name="CurrencyCode" Type="Edm.String" MaxLength="5" sap:label="Currency Code" sap:quickinfo="EPM: Currency Code" sap:semantics="currency-code"/>
+                <Property Name="GrossAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="CurrencyCode" sap:label="Total Amount" sap:quickinfo="EPM: Total Gross Amount"/>
+                <Property Name="NetAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="CurrencyCode" sap:label="Net Amount" sap:quickinfo="EPM: Total Net Amount"/>
+                <Property Name="TaxAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="CurrencyCode" sap:label="Tax Amount" sap:quickinfo="EPM: Total Tax Amount"/>
+                <Property Name="LifecycleStatus" Type="Edm.String" MaxLength="11"/>
+                <Property Name="ApprovalStatus" Type="Edm.String" MaxLength="8"/>
+                <Property Name="ConfirmStatus" Type="Edm.String" MaxLength="9"/>
+                <Property Name="OrderingStatus" Type="Edm.String" MaxLength="9"/>
+                <Property Name="InvoicingStatus" Type="Edm.String" MaxLength="8"/>
+                <Property Name="OverallStatus" Type="Edm.String" MaxLength="20"/>
+                <Property Name="FName" Type="Edm.String" MaxLength="122" sap:label="Created By"/>
+                <NavigationProperty Name="to_Itm" Relationship="YY_C_EXAM01_CDS.assoc_8826F6A84BE95DB725DAC05B1A611F82" FromRole="FromRole_assoc_8826F6A84BE95DB725DAC05B1A611F82" ToRole="ToRole_assoc_8826F6A84BE95DB725DAC05B1A611F82"/>
+            </EntityType>
+            <EntityType Name="YY_I_EXAM02Type" sap:label="PO Line items and Schedule lines" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NodeKey"/>
+                </Key>
+                <Property Name="NodeKey" Type="Edm.Guid" Nullable="false" sap:label="Node Key" sap:quickinfo="EPM: Generic Node Key"/>
+                <Property Name="ParentKey" Type="Edm.Guid" sap:label="Node Key" sap:quickinfo="EPM: Generic Node Key"/>
+                <Property Name="PoItemPos" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Item Position" sap:quickinfo="EPM: Purchase Order Item Position"/>
+                <Property Name="ProductGuid" Type="Edm.Guid" sap:label="Node Key" sap:quickinfo="EPM: Generic Node Key"/>
+                <Property Name="NoteGuid" Type="Edm.Guid" sap:label="Node Key" sap:quickinfo="EPM: Generic Node Key"/>
+                <Property Name="CurrencyCode" Type="Edm.String" MaxLength="5" sap:label="Currency Code" sap:quickinfo="EPM: Currency Code" sap:semantics="currency-code"/>
+                <Property Name="GrossAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:label="Gross Amount" sap:quickinfo="EPM: Total Gross Amount"/>
+                <Property Name="NetAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:label="Net Amount" sap:quickinfo="EPM: Total Net Amount"/>
+                <Property Name="TaxAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:label="Tax Amount" sap:quickinfo="EPM: Total Tax Amount"/>
+            </EntityType>
+            <Association Name="assoc_8826F6A84BE95DB725DAC05B1A611F82" sap:content-version="1">
+                <End Type="YY_C_EXAM01_CDS.POEntity" Multiplicity="1" Role="FromRole_assoc_8826F6A84BE95DB725DAC05B1A611F82"/>
+                <End Type="YY_C_EXAM01_CDS.YY_I_EXAM02Type" Multiplicity="*" Role="ToRole_assoc_8826F6A84BE95DB725DAC05B1A611F82"/>
+            </Association>
+            <EntityContainer Name="YY_C_EXAM01_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="POEntitySet" EntityType="YY_C_EXAM01_CDS.POEntity" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="YY_I_EXAM02" EntityType="YY_C_EXAM01_CDS.YY_I_EXAM02Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_8826F6A84BE95DB725DAC05B1A611F82" Association="YY_C_EXAM01_CDS.assoc_8826F6A84BE95DB725DAC05B1A611F82" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="POEntitySet" Role="FromRole_assoc_8826F6A84BE95DB725DAC05B1A611F82"/>
+                    <End EntitySet="YY_I_EXAM02" Role="ToRole_assoc_8826F6A84BE95DB725DAC05B1A611F82"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="YY_C_EXAM01_CDS.YY_C_EXAM01_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="YY_C_EXAM01_CDS.YY_C_EXAM01_CDS_Entities/POEntitySet" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Itm"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY_C_EXAM01_CDS.POEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>PoId</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/sap/YY_C_EXAM01_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://VHLTSWT2WD01.SAP.LUMEN.CORP.INTRANET:44381/sap/opu/odata/sap/YY_C_EXAM01_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
